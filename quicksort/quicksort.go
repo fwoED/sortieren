@@ -6,5 +6,21 @@ func QuickSort(list []int) {
 		return
 	}
 
-	// TODO
+	Index := len(list)- 1
+	wechselwert := list[Index]
+
+	links := 0
+	for rechts := 0; rechts < Index; rechts++ {
+		if list[rechts] < wechselwert {
+
+			list[links], list[rechts] = list[rechts], list[links]
+			links++
+		}
+	}
+
+	list[links], list[Index] = list[Index], list[links]
+
+	QuickSort(list[:links])
+	QuickSort(list[links+1:])
+
 }

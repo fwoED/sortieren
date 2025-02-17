@@ -6,6 +6,16 @@ package bubblesort
 // Die Funktion gibt true zurück, wenn mindestens ein Tausch durchgeführt wurde.
 func BubbleUp(list []int) bool {
 	swapped := false
-	// TODO
+
+	for i := 0; i < len(list)-1; i++ {
+		if list[i] > list[i+1] {
+			y := list[i+1]
+			list[i+1] = list[i]
+			list[i] = y
+
+			swapped = true
+		}
+
+	}
 	return swapped
 }
